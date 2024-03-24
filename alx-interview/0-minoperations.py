@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-Minimum Operations
+Minimum Operations used in this program
 """
 
 import math
-
 
 def factors(n):
     """factors of n number"""
@@ -19,7 +18,6 @@ def factors(n):
     if n > 2:
         mylist.append(n)
     return mylist
-
 
 def minOperations(n):
     """calculate the minimum operations"""
