@@ -5,6 +5,7 @@ Minimum Operations used in this program
 
 import math
 
+
 def factors(n):
     """factors of n number"""
     mylist = []
@@ -19,9 +20,10 @@ def factors(n):
         mylist.append(n)
     return mylist
 
+
 def minOperations(n):
     """calculate the minimum operations"""
-    if type(n) != int or n < 2:
+    if type(n) is not int or n < 2:
         return 0
     else:
         numOperations = sum(factors(n))
