@@ -21,3 +21,4 @@ def pascal_triangle(n):
   except Exception as e:
     print("An error occurred:", str(e))
     return []
+
