@@ -19,17 +19,28 @@ async function fetchData (url, id) {
   }
 }
 
+async function fetchCharacter (character) {
+  try {
+    const body = await new Promise((resolve, reject) => {
+      req(character, { json: true }, (error, response, body) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(body.name);
+        }
+      });
+    });
+    console.log(body);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 fetchData('https://swapi-api.alx-tools.com/api/films/', process.argv[2])
   .then((data) => {
     const characters = data.characters;
     characters.forEach((character) => {
-      req(character, { json: true }, (error, response, body) => {
-        if (error) {
-          console.error(error);
-        } else {
-          console.log(body.name);
-        }
-      });
+      fetchCharacter(character);
     });
   })
   .catch((error) => {
