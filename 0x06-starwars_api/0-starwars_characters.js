@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
 const req = require('request');
 
@@ -19,7 +19,7 @@ async function fetchData (url, id) {
   }
 }
 
-fetchData('https://swapi-api.alx-tools.com/api/film/', process.argv[2])
+fetchData('https://swapi-api.alx-tools.com/api/films/', process.argv[2])
   .then((data) => {
     const characters = data.characters;
     characters.forEach((character) => {
