@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This  contains a method that rotates a matrix 90 degrees clockwise"""
 
 
