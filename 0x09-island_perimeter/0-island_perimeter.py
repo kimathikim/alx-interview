@@ -25,10 +25,9 @@ that isn’t connected to the water surrounding the island).
         for j in range(cols):
             if grid[i][j] == 1:
                 if grid[i][j+1] == 0 and grid[i][j-1] == 0:
-                    if grid[i-1][j] == 0 or grid[i+1][j] is None:
+                    if grid[i-1][j] == 0 or grid[i+1][j] == 0:
                         parameter += 3
                         continue
-                    parameter += 3
 
                 if grid[i-1][j] == 0 and grid[i+1][j] == 0:
                     if grid[i][j+1] == 0 or grid[i][j-1] == 0:
