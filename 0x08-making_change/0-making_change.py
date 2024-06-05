@@ -15,19 +15,14 @@ def makeChange(coins, total):
     """
     if total <= 0:
         return 0
-
+    # reverse the list of coins orderly
     coins.sort(reverse=True)
-
-    index, num_coins = (0, 0)
-    copy_total = total
-    len_coins = len(coins)
-
-    while (index < len_coins and copy_total > 0):
-        if (copy_total - coins[index]) >= 0:
-            copy_total -= coins[index]
+    index, num_coins = 0, 0
+    while index < len(coins):
+        if total >= coins[index]:
+            total -= coins[index]
             num_coins += 1
         else:
             index += 1
+    return num_coins if total == 0 else -1
 
-    check = copy_total > 0 and num_coins > 0
-    return -1 if check or num_coins == 0 else num_coins
