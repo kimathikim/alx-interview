@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+
 '''This module contains a function that determines
 the winner of a game based on prime numbers.'''
 
