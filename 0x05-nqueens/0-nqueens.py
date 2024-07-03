@@ -1,25 +1,24 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+"""This module creates a program that solves the N queens problem."""
+
 import sys
 
 
 def print_usage_and_exit(message):
+    """prints usage of the code and exits"""
     print(message)
     print("Usage: nqueens N")
     sys.exit(1)
 
 
 def is_safe(board, row, col):
-    # Check this row on left side
+    """Check this row on left side"""
     for i in range(col):
         if board[row][i] == 1:
             return False
-
-    # Check upper diagonal on left side
     for i, j in zip(range(row, -1, -1), range(col, -1, -1)):
         if board[i][j] == 1:
             return False
-
-    # Check lower diagonal on left side
     for i, j in zip(range(row, len(board), 1), range(col, -1, -1)):
         if board[i][j] == 1:
             return False
@@ -28,6 +27,7 @@ def is_safe(board, row, col):
 
 
 def solve_nqueens(board, col, results):
+    """This is the solution to the n-queens problem"""
     if col >= len(board):
         result = []
         for r in range(len(board)):
@@ -48,6 +48,7 @@ def solve_nqueens(board, col, results):
 
 
 def nqueens(N):
+    """the function that is executed second"""
     board = [[0 for _ in range(N)] for _ in range(N)]
     results = []
     solve_nqueens(board, 0, results)
